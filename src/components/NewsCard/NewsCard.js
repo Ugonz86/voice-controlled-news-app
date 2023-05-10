@@ -79,7 +79,7 @@ const NewsCard = ({
           {title}
         </Typography>
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="p" >
             {description}
           </Typography>
         </CardContent>
@@ -89,9 +89,12 @@ const NewsCard = ({
           padding: "0 16px 8px 16px",
           display: "flex",
           justifyContent: "space-between",
+        //   bottom: "0",
+        //   position: "sticky",
+        //   backgroundColor: 'red'
         }}
       >
-        <Button size="small" color="primary" href={url}>
+        <Button size="small" color="primary" href={url} >
           Learn More
         </Button>
         <Typography variant="h5" color="textSecondary" component="h2">

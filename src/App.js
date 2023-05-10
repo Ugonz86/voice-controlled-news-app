@@ -10,7 +10,6 @@ const alanKey = `${process.env.REACT_APP_ALAN_KEY}`;
 const App = () => {
   const [newsArticles, setNewsArticles] = useState([]);
   const [activeArticle, setActiveArticle] = useState(-1);
-  const [isOpen, setIsOpen] = useState(false);
 
   const alanBtnRef = useRef({}).current;
 
@@ -22,8 +21,6 @@ const App = () => {
           console.log(articles);
           setNewsArticles(articles);
           setActiveArticle(-1);
-        } else if (command === "instructions") {
-          setIsOpen(true);
         } else if (command === "highlight") {
           setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
         } else if (command === "open") {
@@ -47,14 +44,14 @@ const App = () => {
   }, []);
 
   return (
-    <div style={{margin: 'auto', width: '100%', padding: 0,}}>
+    <div style={{ margin: "auto", width: "100%", padding: 0 }}>
       <div
         style={{
           padding: "0 5%",
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          margin: '5%',
+          margin: "5%",
         }}
       >
         {newsArticles.length ? (
@@ -123,12 +120,11 @@ const App = () => {
         </h2>
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
-      {/* <Modal isOpen={isOpen} setIsOpen={setIsOpen} /> */}
       {!newsArticles.length ? (
         <div
           style={{
             textAlign: "center",
-            position: 'static',
+            position: "static",
             left: 0,
             bottom: 0,
             color: "black",
